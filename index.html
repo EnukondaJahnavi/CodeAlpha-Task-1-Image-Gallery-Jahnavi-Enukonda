@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive modern image gallery built with HTML, CSS and JavaScript.">
+  <title>FrameFlow | Image Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Frame<span>Flow</span></a>
+    <div class="topbar-text">Interactive Image Gallery</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CODEALPHA · TASK 1</p>
+        <h1>Explore the world<br><span>one frame at a time.</span></h1>
+        <p class="intro">A responsive image gallery with category filters, animated cards, lightbox viewing and keyboard-friendly navigation.</p>
+      </div>
+      <div class="hero-badge">
+        <strong id="count">12</strong>
+        <span>curated frames</span>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Gallery filters">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="nature">Nature</button>
+          <button class="filter" data-filter="city">City</button>
+          <button class="filter" data-filter="travel">Travel</button>
+          <button class="filter" data-filter="architecture">Architecture</button>
+        </div>
+        <button class="view-toggle" id="shuffleBtn">✦ Shuffle</button>
+      </div>
+
+      <div class="gallery" id="gallery">
+        <figure class="card tall" data-category="nature" data-title="Misty Mountains">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=85" alt="Misty mountain landscape">
+          <figcaption><span>Nature</span><strong>Misty Mountains</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="city" data-title="City Lights">
+          <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1000&q=85" alt="City skyline at night">
+          <figcaption><span>City</span><strong>City Lights</strong></figcaption>
+        </figure>
+        <figure class="card wide" data-category="travel" data-title="Coastal Escape">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=85" alt="Tropical beach">
+          <figcaption><span>Travel</span><strong>Coastal Escape</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="architecture" data-title="Modern Lines">
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=85" alt="Modern building">
+          <figcaption><span>Architecture</span><strong>Modern Lines</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="nature" data-title="Forest Path">
+          <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85" alt="Forest path">
+          <figcaption><span>Nature</span><strong>Forest Path</strong></figcaption>
+        </figure>
+        <figure class="card tall" data-category="travel" data-title="Golden Journey">
+          <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=85" alt="Golden landscape">
+          <figcaption><span>Travel</span><strong>Golden Journey</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="city" data-title="Urban Geometry">
+          <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=85" alt="Urban skyline">
+          <figcaption><span>City</span><strong>Urban Geometry</strong></figcaption>
+        </figure>
+        <figure class="card wide" data-category="architecture" data-title="Concrete Canvas">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Contemporary architecture">
+          <figcaption><span>Architecture</span><strong>Concrete Canvas</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="nature" data-title="Ocean Horizon">
+          <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Ocean horizon">
+          <figcaption><span>Nature</span><strong>Ocean Horizon</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="travel" data-title="Quiet Road">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Road through landscape">
+          <figcaption><span>Travel</span><strong>Quiet Road</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="city" data-title="Night Avenue">
+          <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1000&q=85" alt="City avenue">
+          <figcaption><span>City</span><strong>Night Avenue</strong></figcaption>
+        </figure>
+        <figure class="card" data-category="architecture" data-title="Glass & Light">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Glass modern building">
+          <figcaption><span>Architecture</span><strong>Glass & Light</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" id="closeBtn" aria-label="Close">×</button>
+    <button class="light-nav prev" id="prevBtn" aria-label="Previous image">‹</button>
+    <div class="light-content">
+      <img id="lightImage" src="" alt="">
+      <div class="light-caption"><span id="lightCategory"></span><h2 id="lightTitle"></h2></div>
+    </div>
+    <button class="light-nav next" id="nextBtn" aria-label="Next image">›</button>
+  </div>
+
+  <footer>CodeAlpha Frontend Development · Task 1 · Image Gallery</footer>
+  <script src="script.js"></script>
+</body>
+</html>
